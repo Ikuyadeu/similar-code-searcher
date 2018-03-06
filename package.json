@@ -1,0 +1,30 @@
+{
+  "name": "similar-search",
+  "version": "1.0.0",
+  "description": "",
+  "author": "YukiUeda <ikuyadeu@yahoo.co.jp>",
+  "license": "ISC",
+  "repository": "https://github.com/Ikuyadeu/similar-search.git",
+  "scripts": {
+    "start": "probot run ./index.js",
+    "test": "jest && standard"
+  },
+  "dependencies": {
+    "probot": "^5.0.0"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "smee-client": "^1.0.1",
+    "standard": "^10.0.3",
+    "eslint": "^4.17.0"
+  },
+  "engines": {
+    "node": ">= 7.7.0",
+    "npm": ">= 4.0.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
