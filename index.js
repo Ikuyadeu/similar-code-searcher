@@ -19,7 +19,7 @@ module.exports = (robot) => {
 
             if (!deletedLines) return;
 
-            // Get all deleted lines
+            // Create search strings
             for (const line in deletedLines) {
                 if (deletedLines.hasOwnProperty(line)) {
                     let content = deletedLines[line].replace(/(\n\s*-)/g, "");
