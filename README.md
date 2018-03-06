@@ -5,7 +5,7 @@
 For check with Pull Request submitter fogot to change similar code.
 This function searchs similar code with deleted lines
 
-![images/ScreenShot.png](ScreenShot)
+![ScreenShot](images/ScreenShot.png)
 
 ## Setup
 
