@@ -1,4 +1,4 @@
-# similar-search
+# similar-code-searcher
 
 > a GitHub App built with [probot](https://github.com/probot/probot) that searches files similar with deleted code in Pull Request.
 
