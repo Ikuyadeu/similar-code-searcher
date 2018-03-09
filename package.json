@@ -10,7 +10,8 @@
     "test": "jest && standard"
   },
   "dependencies": {
-    "probot": "^5.0.0"
+    "probot": "^5.0.0",
+    "request": "^2.83"
   },
   "devDependencies": {
     "jest": "^21.2.1",
