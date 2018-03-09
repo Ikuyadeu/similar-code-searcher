@@ -1,17 +1,17 @@
 {
-  "name": "similar-search",
+  "name": "similar-code-searcher",
   "version": "1.0.0",
   "description": "",
-  "author": "YukiUeda <ikuyadeu@yahoo.co.jp>",
+  "author": "YukiUeda <ikuyadeu0513@gmail.com>",
   "license": "ISC",
-  "repository": "https://github.com/Ikuyadeu/similar-search.git",
+  "repository": "https://github.com/Ikuyadeu/similar-code-searcher.git",
   "scripts": {
     "start": "probot run ./index.js",
     "test": "jest && standard"
   },
   "dependencies": {
-    "probot": "^5.0.0",
-    "request": "^2.83"
+    "probot": "^6.0.0",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "jest": "^21.2.1",
