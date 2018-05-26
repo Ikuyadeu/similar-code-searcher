@@ -6,22 +6,25 @@
   "license": "ISC",
   "repository": "https://github.com/Ikuyadeu/similar-code-searcher.git",
   "scripts": {
+    "dev": "nodemon --exec \"npm start\"",
     "start": "probot run ./index.js",
-    "test": "jest && standard"
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
-    "probot": "^6.0.0",
-    "request": "^2.83.0"
+    "probot": "^6.2.0",
+    "request": "^2.87.0"
   },
   "devDependencies": {
-    "jest": "^21.2.1",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.5",
     "smee-client": "^1.0.1",
-    "standard": "^10.0.3",
-    "eslint": "^4.17.0"
+    "standard": "^11.0.1",
+    "eslint": "^4.19.1"
   },
   "engines": {
-    "node": ">= 7.7.0",
-    "npm": ">= 4.0.0"
+    "node": ">= 8.3.0"
   },
   "standard": {
     "env": [

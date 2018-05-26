@@ -1,16 +1,34 @@
 {
     "env": {
-        "browser": true,
-        "commonjs": true,
         "es6": true,
         "node": true
     },
     "parserOptions": {
-        "ecmaVersion": 8,
+        "ecmaVersion": 9,
         "ecmaFeatures": {
             "jsx": true
         },
         "sourceType": "module"
     },
+    "rules": {
+        "no-extra-parens":"warn",
+        "semi": "warn",
+        "valid-jsdoc":"warn",
+        "curly":"warn",
+        "dot-location":"warn",
+        "dot-notation":"warn",
+        "eqeqeq":"warn",
+        "no-else-return":"warn",
+        "no-extra-bind":"warn",
+        "no-extra-label":"warn",
+        "no-floating-decimal":"warn",
+        "no-implicit-coercion":"warn",
+        "no-multi-spaces":"warn",
+        "no-useless-return":"warn",
+        "wrap-iife":"warn",
+        "yoda":"warn",
+        "strict":"warn",
+        "no-undef-init":"warn"
+	},
     "extends": "eslint:recommended"
 }

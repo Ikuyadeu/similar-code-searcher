@@ -2,7 +2,8 @@ module.exports = (robot) => {
 
     /**
      * Search similar file with changed line
-     * @returns Result filename
+     * @param {any} context robot API
+     * @returns {void} Result filename
      */
     async function similarSearch(context) {
         const pull = (await context.github.issues.get(context.issue())).data,
@@ -12,12 +13,12 @@ module.exports = (robot) => {
         const contents = [];
 
         await request(diffUrl, function (error, response, body) {
-            if (error) return;
+            if (error) {return;}
 
             // Deleted lines
             const deletedLines = body.match(/(\n-)+\s*[^\d-](.*)/g);
 
-            if (!deletedLines) return;
+            if (!deletedLines) {return;}
 
             // Create search strings
             for (const line in deletedLines) {
@@ -54,5 +55,5 @@ module.exports = (robot) => {
         });
     }
 
-    robot.on("pull_request.opened", similarSearch)
-}
+    robot.on("pull_request.opened", similarSearch);
+};
