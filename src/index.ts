@@ -34,9 +34,7 @@ export = (app: Application) => {
 
             let similarItems: any[] = [];
             let contentsLen = contents.length;
-            app.log(contentsLen);
             contents.map( (content) => {
-                app.log(content);
                 context.github.search.code({q: content}).then((result) => {
                     const searchedItems = result.data.items;
 
