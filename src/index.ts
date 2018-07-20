@@ -5,8 +5,7 @@ export = (app: Application) => {
 
     /**
      * Search similar file with changed line
-     * @param {any} context robot API
-     * @returns {void} Result filename
+     * @param {Context} context robot API
      */
     async function similarSearch(context: Context) {
         const pull = (await context.github.issues.get(context.issue())).data;
