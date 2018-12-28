@@ -1,5 +1,4 @@
 import { Application, Context } from "probot";
-import request = require("request");
 
 export = (app: Application) => {
 
@@ -8,17 +7,15 @@ export = (app: Application) => {
      * @param {Context} context robot API
      */
     async function similarSearch(context: Context) {
-        const pull = (await context.github.issues.get(context.issue())).data;
-        const diffUrl = pull.pull_request.diff_url;
         const repoName = context.payload.pull_request.head.repo.full_name;
 
         const contents: string[] = [];
-
-        await request(diffUrl, (error: any, response: request.RequestResponse, body: any) => {
-            if (error) { return; }
+        const issue = context.issue();
+        const allFiles = await context.github.pullRequests.listFiles(issue);
+        for (const file of allFiles.data) {
 
             // Deleted lines
-            const deletedLines = body.match(/(\n-)+\s*[^\d-](.*)/g);
+            const deletedLines = file.patch.match(/(\n-)+\s*[^\d-](.*)/g);
 
             if (!deletedLines) { return; }
 
@@ -54,7 +51,7 @@ export = (app: Application) => {
                     }
                 });
             });
-        });
+        }
     }
     app.on("pull_request.opened", similarSearch);
 };
