@@ -45,9 +45,12 @@ export = (app: Application) => {
                         similarFiles = similarFiles.filter((x, i, self) => {
                             return self.indexOf(x) === i;
                         });
-                        const output = `Similar files are\n${similarFiles.toString()}`;
-                        const params = context.issue({body: output});
-                        context.github.issues.createComment(params);
+
+                        if(similarFiles.length > 0) {
+                            const output = `Similar files are\n${similarFiles.toString()}`;
+                            const params = context.issue({body: output});
+                            context.github.issues.createComment(params);
+                        }
                     }
                 });
             });
